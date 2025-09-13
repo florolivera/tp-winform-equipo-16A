@@ -9,19 +9,21 @@ namespace Negocio
 {
     public class ImagenNegocio
     {
-        string consultaPrincipal = "SELECT Id, IdArticulo, ImagenUrl FROM IMAGENES";
+        //consultas a db
         string consultaPorId = "SELECT Id, IdArticulo, ImagenUrl FROM IMAGENES WHERE Id=@id";
         string consultaPorArticulo = "SELECT Id, IdArticulo, ImagenUrl FROM IMAGENES WHERE IdArticulo=@id";
-        string consultaAgregar = "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@a, @u)";
+        string consultaAgregar = "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@art, @url)";
         string consultaEliminar = "DELETE FROM IMAGENES WHERE Id=@id";
         string consultaEliminarPorArticulo = "DELETE FROM IMAGENES WHERE IdArticulo=@id";
+
+
         public List<Imagen> ListarPorArticulo(int idArticulo)
         {
             var lista = new List<Imagen>();
             var datos = new AccesoDB();
             try
             {
-                datos.setearConsulta("SELECT Id, IdArticulo, ImagenUrl FROM IMAGENES WHERE IdArticulo=@id");
+                datos.setearConsulta(consultaPorId);
                 datos.setearParametro("@id", idArticulo);
                 datos.ejecutarLectura();
 
@@ -44,9 +46,9 @@ namespace Negocio
             var datos = new AccesoDB();
             try
             {
-                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@a, @u)");
-                datos.setearParametro("@a", img.IdArticulo);
-                datos.setearParametro("@u", img.ImagenUrl);
+                datos.setearConsulta(consultaAgregar);
+                datos.setearParametro("@art", img.IdArticulo);
+                datos.setearParametro("@url", img.ImagenUrl);
                 datos.ejecutarAccion();
             }
             finally { datos.cerrarConexion(); }

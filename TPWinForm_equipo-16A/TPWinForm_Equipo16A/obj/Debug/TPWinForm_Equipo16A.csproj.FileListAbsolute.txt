@@ -1,0 +1,17 @@
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\TPWinForm_Equipo16A.exe.config
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\TPWinForm_Equipo16A.exe
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\TPWinForm_Equipo16A.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.csproj.AssemblyReference.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.Properties.Resources.resources
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.csproj.GenerateResource.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.csproj.CoreCompileInputs.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.exe
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.exe.config
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.Principal.resources
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\Dominio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\Negocio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\Dominio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\bin\Debug\Negocio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinForm_Equipo16A.AltaArticulo.resources
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\TPWinForm_equipo-16A\TPWinForm_Equipo16A\obj\Debug\TPWinFor.1B9623D1.Up2Date
