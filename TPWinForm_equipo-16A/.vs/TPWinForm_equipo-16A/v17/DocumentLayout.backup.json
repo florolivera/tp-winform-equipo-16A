@@ -1,41 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\",
+  "WorkspaceRootPath": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A-COPY\\TPWinForm_equipo-16A\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\tpwinform_equipo-16a\\tpwinform_equipo16a\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a-copy\\tpwinform_equipo-16a\\tpwinform_equipo16a\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|solutionrelative:tpwinform_equipo16a\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A-COPY\\TPWinForm_equipo-16A\\tpwinform_equipo16a\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|solutionrelative:tpwinform_equipo16a\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\tpwinform_equipo-16a\\tpwinform_equipo16a\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9BE649CD-FA91-42BB-9298-6DB568E33B47}|TPWinForm_Equipo16A\\TPWinForm_Equipo16A.csproj|solutionrelative:tpwinform_equipo16a\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB40635-EDDC-467B-95CA-4DB3EB8D6C9C}|..\\Negocio\\Negocio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\negocio\\marcanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB40635-EDDC-467B-95CA-4DB3EB8D6C9C}|..\\Negocio\\Negocio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\negocio\\categorianegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB40635-EDDC-467B-95CA-4DB3EB8D6C9C}|..\\Negocio\\Negocio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\negocio\\imagennegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB40635-EDDC-467B-95CA-4DB3EB8D6C9C}|..\\Negocio\\Negocio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\negocio\\articulonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB40635-EDDC-467B-95CA-4DB3EB8D6C9C}|..\\Negocio\\Negocio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\negocio\\accesodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F31AFDE-BAF9-407C-9E3A-9621C4DCDE64}|..\\Dominio\\Dominio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\dominio\\objetos\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F31AFDE-BAF9-407C-9E3A-9621C4DCDE64}|..\\Dominio\\Dominio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\dominio\\objetos\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F31AFDE-BAF9-407C-9E3A-9621C4DCDE64}|..\\Dominio\\Dominio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\dominio\\objetos\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F31AFDE-BAF9-407C-9E3A-9621C4DCDE64}|..\\Dominio\\Dominio.csproj|c:\\users\\flore\\onedrive\\escritorio\\tec. programacion\\programacion iii\\repos\\winform\\tp-winform-equipo-16a\\dominio\\objetos\\imagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,152 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Articulo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Articulo.cs",
-              "RelativeDocumentMoniker": "TPWinForm_Equipo16A\\Articulo.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Articulo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPWinForm_Equipo16A\\Articulo.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:56:40.839Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccesoDB.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\AccesoDB.cs",
-              "RelativeDocumentMoniker": "..\\Negocio\\AccesoDB.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\AccesoDB.cs",
-              "RelativeToolTip": "..\\Negocio\\AccesoDB.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:55:23.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImagenNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\ImagenNegocio.cs",
-              "RelativeDocumentMoniker": "..\\Negocio\\ImagenNegocio.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\ImagenNegocio.cs",
-              "RelativeToolTip": "..\\Negocio\\ImagenNegocio.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:55:04.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoriaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\CategoriaNegocio.cs",
-              "RelativeDocumentMoniker": "..\\Negocio\\CategoriaNegocio.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\CategoriaNegocio.cs",
-              "RelativeToolTip": "..\\Negocio\\CategoriaNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:54:52.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MarcaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\MarcaNegocio.cs",
-              "RelativeDocumentMoniker": "..\\Negocio\\MarcaNegocio.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\MarcaNegocio.cs",
-              "RelativeToolTip": "..\\Negocio\\MarcaNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:54:28.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Imagen.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Imagen.cs",
-              "RelativeDocumentMoniker": "..\\Dominio\\Objetos\\Imagen.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Imagen.cs",
-              "RelativeToolTip": "..\\Dominio\\Objetos\\Imagen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:52:51.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Categoria.cs",
-              "RelativeDocumentMoniker": "..\\Dominio\\Objetos\\Categoria.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Categoria.cs",
-              "RelativeToolTip": "..\\Dominio\\Objetos\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:52:40.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Marca.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Marca.cs",
-              "RelativeDocumentMoniker": "..\\Dominio\\Objetos\\Marca.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Marca.cs",
-              "RelativeToolTip": "..\\Dominio\\Objetos\\Marca.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:52:02.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Articulo.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Articulo.cs",
-              "RelativeDocumentMoniker": "..\\Dominio\\Objetos\\Articulo.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Dominio\\Objetos\\Articulo.cs",
-              "RelativeToolTip": "..\\Dominio\\Objetos\\Articulo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:51:49.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ArticuloNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\ArticuloNegocio.cs",
-              "RelativeDocumentMoniker": "..\\Negocio\\ArticuloNegocio.cs",
-              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\Negocio\\ArticuloNegocio.cs",
-              "RelativeToolTip": "..\\Negocio\\ArticuloNegocio.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:51:19.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A-COPY\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs",
+              "RelativeDocumentMoniker": "TPWinForm_Equipo16A\\Principal.cs",
+              "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A-COPY\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs",
+              "RelativeToolTip": "TPWinForm_Equipo16A\\Principal.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAUwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T22:51:41.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs",
+              "DocumentMoniker": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A-COPY\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs",
               "RelativeDocumentMoniker": "TPWinForm_Equipo16A\\Principal.cs",
               "ToolTip": "C:\\Users\\flore\\OneDrive\\Escritorio\\TEC. PROGRAMACION\\Programacion III\\repos\\Winform\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "TPWinForm_Equipo16A\\Principal.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "..\\..\\tp-winform-equipo-16A\\TPWinForm_equipo-16A\\TPWinForm_Equipo16A\\Principal.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T04:47:39.162Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+              "WhenOpened": "2025-09-10T04:47:39.162Z"
             }
           ]
         }

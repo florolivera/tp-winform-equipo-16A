@@ -4,3 +4,9 @@ C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winf
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Dominio\obj\Debug\Dominio.dll
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Dominio\obj\Debug\Dominio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\bin\Debug\Dominio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\bin\Debug\Dominio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\obj\Debug\Dominio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Dominio\obj\Debug\Dominio.pdb

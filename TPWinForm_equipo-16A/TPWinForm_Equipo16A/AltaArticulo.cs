@@ -77,8 +77,8 @@ namespace TPWinForm_Equipo16A
             var aNeg = new ArticuloNegocio();
             if (_edit == null)
             {
-                int idNuevo = aNeg.Agregar(art);
-                GuardarImagenes(idNuevo);
+                aNeg.Agregar(art);
+                //GuardarImagenes(idNuevo);
             }
             else
             {

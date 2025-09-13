@@ -114,26 +114,21 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public int Agregar(Articulo a)
+        public void Agregar(Articulo a)
         {
             var datos = new AccesoDB();
             try
             {
                 datos.setearConsulta(consultaAgregar);
-                datos.setearParametro("@cod", a.Codigo ?? (object)DBNull.Value);
+                datos.setearParametro("@cod", (object)a.Codigo ?? DBNull.Value);
                 datos.setearParametro("@nom", a.Nombre);
                 datos.setearParametro("@desc", (object)a.Descripcion ?? DBNull.Value);
                 datos.setearParametro("@idMarca", a.Marca?.Id > 0 ? a.Marca.Id : (object)DBNull.Value);
                 datos.setearParametro("@idCat", a.Categoria?.Id > 0 ? a.Categoria.Id : (object)DBNull.Value);
                 datos.setearParametro("@precio", a.Precio);
+                datos.ejecutarLectura();
 
-                var cmd = typeof(AccesoDB).GetField("comando", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(datos) as System.Data.SqlClient.SqlCommand;
-                var conn = typeof(AccesoDB).GetField("conexion", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(datos) as System.Data.SqlClient.SqlConnection;
 
-                cmd.Connection = conn;
-                conn.Open();
-                var newId = (int)(decimal)cmd.ExecuteScalar();
-                return newId;
             }
             finally { datos.cerrarConexion(); }
         }

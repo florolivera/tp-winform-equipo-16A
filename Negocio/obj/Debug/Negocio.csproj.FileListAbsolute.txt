@@ -7,3 +7,12 @@ C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winf
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Negocio\obj\Debug\Negocio.dll
 C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A\Negocio\obj\Debug\Negocio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\bin\Debug\Negocio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\bin\Debug\Negocio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\bin\Debug\Dominio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\bin\Debug\Dominio.pdb
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\obj\Debug\Negocio.dll
+C:\Users\flore\OneDrive\Escritorio\TEC. PROGRAMACION\Programacion III\repos\Winform\tp-winform-equipo-16A-COPY\Negocio\obj\Debug\Negocio.pdb
