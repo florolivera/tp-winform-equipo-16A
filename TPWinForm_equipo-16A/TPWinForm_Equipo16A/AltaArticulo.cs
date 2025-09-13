@@ -78,7 +78,7 @@ namespace TPWinForm_Equipo16A
             if (_edit == null)
             {
                 aNeg.Agregar(art);
-                //GuardarImagenes(idNuevo);
+                GuardarImagenes(art.Id);
             }
             else
             {

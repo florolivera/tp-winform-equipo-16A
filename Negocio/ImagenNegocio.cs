@@ -23,7 +23,7 @@ namespace Negocio
             var datos = new AccesoDB();
             try
             {
-                datos.setearConsulta(consultaPorId);
+                datos.setearConsulta(consultaPorArticulo);
                 datos.setearParametro("@id", idArticulo);
                 datos.ejecutarLectura();
 
