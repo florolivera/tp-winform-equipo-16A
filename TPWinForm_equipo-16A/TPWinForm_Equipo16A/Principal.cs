@@ -187,17 +187,43 @@ namespace TPWinForm_Equipo16A
         private void btnAgregarImagen_Click(object sender, EventArgs e)
         {
             var articulo = ArticuloSeleccionado();
-            //if (articulo == null) return;
-
+            if (articulo == null)
+            {
+                MessageBox.Show("selecciona un articulo");
+                return;
+            }
             OpenFileDialog archivo = new OpenFileDialog();
             archivo.Filter = "imagenes|*.jpg;*.jpeg;*.png;";
 
             if(archivo.ShowDialog() != DialogResult.OK)
                 return;
 
+            // carpeta destino 
+            string ImagenDir = Path.Combine(Application.StartupPath, "imagenes");
+            Directory.CreateDirectory(ImagenDir); // crea carpeta si no existe
+           
+            // obtener nombre del archivo
+            string nombreArchivo = Path.GetFileName(archivo.FileName);
+
+            // ruta completa de la carpeta destino 
+            string destino = Path.Combine(ImagenDir, nombreArchivo);
+
+            //copia de la iamgen en la ruta 
+            File.Copy(archivo.FileName, destino, overwrite: true);
+
+
             pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxArticulo.ImageLocation = archivo.FileName;
-          
+            pbxArticulo.ImageLocation = destino;
+
+            // guardar en la BD
+            var imgNueva = new ImagenNegocio();
+            imgNueva.Agregar(new Imagen {
+                IdArticulo = articulo.Id,
+                ImagenUrl = destino
+            });
+
+            MessageBox.Show("imagen cargada correctamente");
+
         }
     }
 }
