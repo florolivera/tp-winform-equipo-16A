@@ -47,8 +47,9 @@
             // 
             // dgvArticulos
             // 
-            this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 68);
             this.dgvArticulos.Name = "dgvArticulos";
@@ -73,7 +74,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(70, 12);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(220, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(220, 22);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -82,7 +83,7 @@
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.Location = new System.Drawing.Point(70, 38);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(220, 21);
+            this.cmbMarca.Size = new System.Drawing.Size(220, 24);
             this.cmbMarca.TabIndex = 3;
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 
@@ -91,7 +92,7 @@
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.Location = new System.Drawing.Point(352, 38);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(220, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(220, 24);
             this.cmbCategoria.TabIndex = 4;
             this.cmbCategoria.SelectionChangeCommitted += new System.EventHandler(this.cmbCategoria_SelectionChangeCommitted);
             // 
@@ -166,7 +167,7 @@
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Location = new System.Drawing.Point(12, 15);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(52, 16);
             this.lblBuscar.TabIndex = 0;
             this.lblBuscar.Text = "Buscar:";
             // 
@@ -175,7 +176,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(12, 41);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(40, 13);
+            this.lblMarca.Size = new System.Drawing.Size(48, 16);
             this.lblMarca.TabIndex = 1;
             this.lblMarca.Text = "Marca:";
             // 
@@ -184,12 +185,13 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Location = new System.Drawing.Point(296, 41);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(69, 16);
             this.lblCategoria.TabIndex = 2;
             this.lblCategoria.Text = "Categoria:";
             // 
             // btnAgregarImagen
             // 
+            this.btnAgregarImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregarImagen.Location = new System.Drawing.Point(396, 434);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(90, 25);
@@ -216,6 +218,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnDetalle);
+            this.MinimumSize = new System.Drawing.Size(982, 518);
             this.Name = "Principal";
             this.Text = "Catalogo - Gestion de Articulos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
