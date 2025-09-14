@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TPWinForm_Equipo16A
 {
@@ -182,5 +183,21 @@ namespace TPWinForm_Equipo16A
         private void txtBuscar_TextChanged(object sender, EventArgs e) => AplicarFiltro();
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e) => AplicarFiltro();
         private void cmbCategoria_SelectionChangeCommitted(object sender, EventArgs e) => AplicarFiltro();
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            var articulo = ArticuloSeleccionado();
+            //if (articulo == null) return;
+
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "imagenes|*.jpg;*.jpeg;*.png;";
+
+            if(archivo.ShowDialog() != DialogResult.OK)
+                return;
+
+            pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxArticulo.ImageLocation = archivo.FileName;
+          
+        }
     }
 }
