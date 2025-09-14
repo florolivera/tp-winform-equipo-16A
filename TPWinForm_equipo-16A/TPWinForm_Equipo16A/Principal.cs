@@ -18,6 +18,7 @@ namespace TPWinForm_Equipo16A
         {
             InitializeComponent();
             Shown += (s, e) => Init();
+
         }
 
         private void Init()
@@ -25,7 +26,9 @@ namespace TPWinForm_Equipo16A
             CargarListado();
             ConfigurarGrilla();
             CargarFiltros();
-            AplicarFiltro(); // inicial
+            AplicarFiltro(); 
+
+            //dgvArticulos.Columns["Id"].Visible = false;
         }
 
         private void CargarListado()
@@ -83,6 +86,8 @@ namespace TPWinForm_Equipo16A
 
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = data;
+
+            dgvArticulos.Columns["Id"].Visible = false;
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
