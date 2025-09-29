@@ -47,11 +47,34 @@ namespace TPWinForm_Equipo16A
         }
 
         private void ConfigurarGrilla()
-        {
+        {           
             dgvArticulos.AutoGenerateColumns = true;
             dgvArticulos.ReadOnly = true;
             dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvArticulos.MultiSelect = false;
+
+            // evita que el DGV explote 
+            dgvArticulos.DataError += (s, e) => { e.ThrowException = false; };
+
+
+            // convierte marca y categoria en texto 
+            dgvArticulos.CellFormatting += (s, e) =>
+            {
+                if (e.Value == null) return;
+
+                var colName = dgvArticulos.Columns[e.ColumnIndex].Name;
+
+                if (colName == "Marca" && e.Value is Dominio.Objetos.Marca m)
+                {
+                    e.Value = m.Descripcion;   // mostrar texto
+                    e.FormattingApplied = true;
+                }
+                else if (colName == "Categoria" && e.Value is Dominio.Objetos.Categoria c)
+                {
+                    e.Value = c.Descripcion;   // mostrar texto
+                    e.FormattingApplied = true;
+                }
+            };
         }
 
         private void CargarFiltros()
@@ -207,7 +230,7 @@ namespace TPWinForm_Equipo16A
             );
 
             if (string.IsNullOrWhiteSpace(url))
-                return; // cancelado o vacío
+                return; // cancelado o vacio
 
             // Mostrar en el PictureBox
             pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -224,48 +247,6 @@ namespace TPWinForm_Equipo16A
             MessageBox.Show("Imagen cargada correctamente");
         }
 
-
-
-        /*private void btnAgregarImagen_Click(object sender, EventArgs e)
-        {
-            var articulo = ArticuloSeleccionado();
-            if (articulo == null)
-            {
-                MessageBox.Show("selecciona un articulo");
-                return;
-            }
-            OpenFileDialog archivo = new OpenFileDialog();
-            archivo.Filter = "imagenes|*.jpg;*.jpeg;*.png;";
-
-            if(archivo.ShowDialog() != DialogResult.OK)
-                return;
-
-            // carpeta destino 
-            string ImagenDir = Path.Combine(Application.StartupPath, "imagenes");
-            Directory.CreateDirectory(ImagenDir); // crea carpeta si no existe
-           
-            // obtener nombre del archivo
-            string nombreArchivo = Path.GetFileName(archivo.FileName);
-
-            // ruta completa de la carpeta destino 
-            string destino = Path.Combine(ImagenDir, nombreArchivo);
-
-            //copia de la iamgen en la ruta 
-            File.Copy(archivo.FileName, destino, overwrite: true);
-
-
-            pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxArticulo.ImageLocation = destino;
-
-            // guardar en la BD
-            var imgNueva = new ImagenNegocio();
-            imgNueva.Agregar(new Imagen {
-                IdArticulo = articulo.Id,
-                ImagenUrl = destino
-            });
-
-            MessageBox.Show("imagen cargada correctamente");
-
-        } */
+        
     }
 }
