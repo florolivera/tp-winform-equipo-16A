@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace TPWinForm_Equipo16A
 {
@@ -194,6 +195,42 @@ namespace TPWinForm_Equipo16A
             var articulo = ArticuloSeleccionado();
             if (articulo == null)
             {
+                MessageBox.Show("Selecciona un articulo");
+                return;
+            }
+
+            // Pide la URL al usuario
+            string url = Interaction.InputBox(
+                "Ingrese la URL de la imagen:",
+                "Agregar imagen"
+                
+            );
+
+            if (string.IsNullOrWhiteSpace(url))
+                return; // cancelado o vacío
+
+            // Mostrar en el PictureBox
+            pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxArticulo.ImageLocation = url;
+
+            // Guardar en la BD
+            var imgNeg = new ImagenNegocio();
+            imgNeg.Agregar(new Imagen
+            {
+                IdArticulo = articulo.Id,
+                ImagenUrl = url
+            });
+
+            MessageBox.Show("Imagen cargada correctamente");
+        }
+
+
+
+        /*private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            var articulo = ArticuloSeleccionado();
+            if (articulo == null)
+            {
                 MessageBox.Show("selecciona un articulo");
                 return;
             }
@@ -229,6 +266,6 @@ namespace TPWinForm_Equipo16A
 
             MessageBox.Show("imagen cargada correctamente");
 
-        }
+        } */
     }
 }
