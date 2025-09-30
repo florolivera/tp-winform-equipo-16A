@@ -6,6 +6,9 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.VisualBasic;
+using System.Net;
+using System.Drawing;
+using System.Threading.Tasks;
 
 namespace TPWinForm_Equipo16A
 {
@@ -51,11 +54,10 @@ namespace TPWinForm_Equipo16A
             dgvArticulos.AutoGenerateColumns = true;
             dgvArticulos.ReadOnly = true;
             dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvArticulos.MultiSelect = false;
+            dgvArticulos.MultiSelect = false;         
 
             // evita que el DGV explote 
             dgvArticulos.DataError += (s, e) => { e.ThrowException = false; };
-
 
             // convierte marca y categoria en texto 
             dgvArticulos.CellFormatting += (s, e) =>
@@ -130,19 +132,91 @@ namespace TPWinForm_Equipo16A
             MostrarImagenActual();
         }
 
-        private void MostrarImagenActual()
+
+        //metodo auxiliar para descargar de internet ya que algunos ervidores bloquean las urls directas
+        private async Task<Image> DescargarImagenConHeadersAsync(string url)
         {
+            // chequea que la url sea valida y use http o https
+            if (!Uri.TryCreate((url ?? "").Trim(), UriKind.Absolute, out var uri) ||
+                (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+                return null;
+
+            // intenta descargar la imagen con un referer opcional / referer: indica a la web desde donde llega la solicitud
+            async Task<Image> TryDownload(string referer)
+            {
+                using (var wc = new WebClient())
+                {
+                    //
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+
+
+                    if (!string.IsNullOrEmpty(referer))
+                        wc.Headers.Add(HttpRequestHeader.Referer, referer);
+
+                    //descarga de datos de la imagen
+                    byte[] data = await wc.DownloadDataTaskAsync(uri);
+
+                    //se crea la imagen de los datos bajados
+                    using (var ms = new MemoryStream(data))
+                    using (var img = Image.FromStream(ms))
+                        return new Bitmap(img); 
+                }
+            }
+
+            try
+            {
+                //  sin referer 
+                return await TryDownload(null);
+            }
+            catch
+            {
+                try
+                {
+                    //  con referer del mismo sitio
+                    return await TryDownload($"{uri.Scheme}://{uri.Host}/");
+                }
+                catch
+                {
+                    try
+                    {
+                        // con referer genérico (google)
+                        return await TryDownload("https://www.google.com/");
+                    }
+                    catch
+                    {
+                        //si todo falla, no muuestra nada
+                        return null;
+                    }
+                }
+            }
+        }
+
+
+
+        private async void MostrarImagenActual()
+        {
+
             if (imagenesDelSeleccionado == null || imagenesDelSeleccionado.Count == 0)
             {
-                pbxArticulo.ImageLocation = null;
                 pbxArticulo.Image = null;
+                pbxArticulo.ImageLocation = null;
                 return;
             }
+
+            
             if (idxImg < 0) idxImg = imagenesDelSeleccionado.Count - 1;
             if (idxImg >= imagenesDelSeleccionado.Count) idxImg = 0;
 
+            string url = imagenesDelSeleccionado[idxImg].ImagenUrl;
+
             pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxArticulo.LoadAsync(imagenesDelSeleccionado[idxImg].ImagenUrl);
+            pbxArticulo.Image = null;
+            pbxArticulo.ImageLocation = null;
+
+            // descarga la img desde internet usando el metodo auxiliar 
+            var img = await DescargarImagenConHeadersAsync(url);
+            // si logro descargar, muestra la imagen, si no, queda null
+            pbxArticulo.Image = img; 
         }
 
         private Articulo ArticuloSeleccionado()
