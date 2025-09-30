@@ -48,6 +48,8 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
+            this.btnImgLocal = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -117,7 +119,7 @@
             this.txtImagenes.Multiline = true;
             this.txtImagenes.Name = "txtImagenes";
             this.txtImagenes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtImagenes.Size = new System.Drawing.Size(465, 120);
+            this.txtImagenes.Size = new System.Drawing.Size(465, 90);
             this.txtImagenes.TabIndex = 15;
             // 
             // btnGuardar
@@ -199,9 +201,30 @@
             this.lblImagenes.TabIndex = 6;
             this.lblImagenes.Text = "Imagenes (una URL por linea)";
             // 
+            // btnImgLocal
+            // 
+            this.btnImgLocal.Location = new System.Drawing.Point(139, 394);
+            this.btnImgLocal.Name = "btnImgLocal";
+            this.btnImgLocal.Size = new System.Drawing.Size(75, 23);
+            this.btnImgLocal.TabIndex = 18;
+            this.btnImgLocal.Text = "+";
+            this.btnImgLocal.UseVisualStyleBackColor = true;
+            this.btnImgLocal.Click += new System.EventHandler(this.btnImgLocal_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Imagenes (Local)";
+            // 
             // AltaArticulo
             // 
             this.ClientSize = new System.Drawing.Size(494, 461);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnImgLocal);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDescripcion);
@@ -229,5 +252,8 @@
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.Button btnImgLocal;
+        private System.Windows.Forms.Label label1;
     }
 }

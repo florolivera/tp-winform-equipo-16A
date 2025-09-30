@@ -139,5 +139,23 @@ namespace TPWinForm_Equipo16A
             f.AcceptButton = ok; f.CancelButton = cancel;
             return f.ShowDialog(this) == DialogResult.OK ? txt.Text : null;
         }
+
+        private void btnImgLocal_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "imagenes|*.jpg;*.jpeg;*.png;";
+
+            if (archivo.ShowDialog() != DialogResult.OK)
+                return;
+
+            var imgNeg = new ImagenNegocio();
+            string nombreParaBD = imgNeg.GuardarImagenLocalRetornarNombre(archivo.FileName);
+
+            if (string.IsNullOrWhiteSpace(txtImagenes.Text))
+                txtImagenes.Text = nombreParaBD;
+            else
+                txtImagenes.AppendText(Environment.NewLine + nombreParaBD);
+        }
+
     }
 }

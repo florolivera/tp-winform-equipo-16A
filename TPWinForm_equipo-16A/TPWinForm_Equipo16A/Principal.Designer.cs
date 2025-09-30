@@ -40,7 +40,6 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -189,21 +188,9 @@
             this.lblCategoria.TabIndex = 2;
             this.lblCategoria.Text = "Categoria:";
             // 
-            // btnAgregarImagen
-            // 
-            this.btnAgregarImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregarImagen.Location = new System.Drawing.Point(396, 434);
-            this.btnAgregarImagen.Name = "btnAgregarImagen";
-            this.btnAgregarImagen.Size = new System.Drawing.Size(90, 25);
-            this.btnAgregarImagen.TabIndex = 11;
-            this.btnAgregarImagen.Text = "Agregar Imagen";
-            this.btnAgregarImagen.UseVisualStyleBackColor = true;
-            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
-            // 
             // Principal
             // 
             this.ClientSize = new System.Drawing.Size(964, 471);
-            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblCategoria);
@@ -227,7 +214,5 @@
             this.PerformLayout();
 
         }
-
-        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
