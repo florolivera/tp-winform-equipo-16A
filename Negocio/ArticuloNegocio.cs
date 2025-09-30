@@ -28,8 +28,8 @@ namespace Negocio
                 WHERE A.Id = @id";
         string consultaAgregar = @"
                 INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)
-                VALUES (@cod, @nom, @desc, @idMarca, @idCat, @precio);
-                SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                OUTPUT INSERTED.Id
+                VALUES (@cod, @nom, @desc, @idMarca, @idCat, @precio);";
         string consultaModificar = @"
                 UPDATE ARTICULOS
                 SET Codigo=@cod, Nombre=@nom, Descripcion=@desc,
@@ -114,7 +114,7 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public void Agregar(Articulo a)
+        public int Agregar(Articulo a)
         {
             var datos = new AccesoDB();
             try
@@ -127,7 +127,10 @@ namespace Negocio
                 datos.setearParametro("@idCat", a.Categoria?.Id > 0 ? a.Categoria.Id : (object)DBNull.Value);
                 datos.setearParametro("@precio", a.Precio);
                 datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                    return (int)datos.Lector[0];
 
+                throw new InvalidOperationException("No se pudo obtener el Id insertado.");
 
             }
             finally { datos.cerrarConexion(); }
