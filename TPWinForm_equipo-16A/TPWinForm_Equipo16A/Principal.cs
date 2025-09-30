@@ -15,11 +15,13 @@ namespace TPWinForm_Equipo16A
         private List<Imagen> imagenesDelSeleccionado = new List<Imagen>();
         private int idxImg = 0;
 
+        private ContextMenuStrip menuMarca = new ContextMenuStrip();
+        private ContextMenuStrip menuCategoria = new ContextMenuStrip();
+
         public Principal()
         {
             InitializeComponent();
             Shown += (s, e) => Init();
-
         }
 
         private void Init()
@@ -27,9 +29,9 @@ namespace TPWinForm_Equipo16A
             CargarListado();
             ConfigurarGrilla();
             CargarFiltros();
-            AplicarFiltro(); 
+            ConfigurarMenusGestion();  
+            AplicarFiltro();
 
-            //dgvArticulos.Columns["Id"].Visible = false;
         }
 
         private void CargarListado()
@@ -38,6 +40,17 @@ namespace TPWinForm_Equipo16A
             {
                 var neg = new ArticuloNegocio();
                 listaArticulos = neg.Listar();
+
+                var cNeg = new CategoriaNegocio();
+                var mNeg = new MarcaNegocio();
+                var catIds = new HashSet<int>(cNeg.Listar().Select(c => c.Id));
+                var marIds = new HashSet<int>(mNeg.Listar().Select(m => m.Id));
+                listaArticulos = listaArticulos
+                    .Where(a => a.Categoria != null && catIds.Contains(a.Categoria.Id)
+                             && a.Marca != null && marIds.Contains(a.Marca.Id))
+                    .ToList();
+
+
                 dgvArticulos.DataSource = listaArticulos;
             }
             catch (Exception ex)
@@ -47,17 +60,15 @@ namespace TPWinForm_Equipo16A
         }
 
         private void ConfigurarGrilla()
-        {           
+        {
             dgvArticulos.AutoGenerateColumns = true;
             dgvArticulos.ReadOnly = true;
             dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvArticulos.MultiSelect = false;
 
-            // evita que el DGV explote 
             dgvArticulos.DataError += (s, e) => { e.ThrowException = false; };
 
 
-            // convierte marca y categoria en texto 
             dgvArticulos.CellFormatting += (s, e) =>
             {
                 if (e.Value == null) return;
@@ -66,15 +77,18 @@ namespace TPWinForm_Equipo16A
 
                 if (colName == "Marca" && e.Value is Dominio.Objetos.Marca m)
                 {
-                    e.Value = m.Descripcion;   // mostrar texto
+                    e.Value = m.Descripcion; 
                     e.FormattingApplied = true;
                 }
                 else if (colName == "Categoria" && e.Value is Dominio.Objetos.Categoria c)
                 {
-                    e.Value = c.Descripcion;   // mostrar texto
+                    e.Value = c.Descripcion;  
                     e.FormattingApplied = true;
                 }
             };
+
+
+            pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void CargarFiltros()
@@ -111,7 +125,8 @@ namespace TPWinForm_Equipo16A
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = data;
 
-            dgvArticulos.Columns["Id"].Visible = false;
+            if (dgvArticulos.Columns.Contains("Id"))
+                dgvArticulos.Columns["Id"].Visible = false;
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -125,6 +140,7 @@ namespace TPWinForm_Equipo16A
         private void CargarImagenes(int idArticulo)
         {
             var neg = new ImagenNegocio();
+
             imagenesDelSeleccionado = neg.ListarPorArticulo(idArticulo);
             idxImg = 0;
             MostrarImagenActual();
@@ -222,21 +238,17 @@ namespace TPWinForm_Equipo16A
                 return;
             }
 
-            // Pide la URL al usuario
             string url = Interaction.InputBox(
                 "Ingrese la URL de la imagen:",
                 "Agregar imagen"
-                
             );
 
             if (string.IsNullOrWhiteSpace(url))
-                return; // cancelado o vacio
+                return;
 
-            // Mostrar en el PictureBox
             pbxArticulo.SizeMode = PictureBoxSizeMode.Zoom;
             pbxArticulo.ImageLocation = url;
 
-            // Guardar en la BD
             var imgNeg = new ImagenNegocio();
             imgNeg.Agregar(new Imagen
             {
@@ -247,6 +259,191 @@ namespace TPWinForm_Equipo16A
             MessageBox.Show("Imagen cargada correctamente");
         }
 
-        
+        private void ConfigurarMenusGestion()
+        {
+            // === MARCA ===
+            menuMarca.Items.Clear();
+            menuMarca.Items.Add("Agregar…", null, (s, e) => AgregarMarca());
+            menuMarca.Items.Add("Renombrar…", null, (s, e) => RenombrarMarca());
+            menuMarca.Items.Add("Eliminar", null, (s, e) => EliminarMarca());
+            cmbMarca.ContextMenuStrip = menuMarca;
+
+            menuCategoria.Items.Clear();
+            menuCategoria.Items.Add("Agregar…", null, (s, e) => AgregarCategoria());
+            menuCategoria.Items.Add("Renombrar…", null, (s, e) => RenombrarCategoria());
+            menuCategoria.Items.Add("Eliminar", null, (s, e) => EliminarCategoria());
+            cmbCategoria.ContextMenuStrip = menuCategoria;
+        }
+
+        private string Prompt(string titulo, string valorInicial = "")
+        {
+            var f = new Form
+            {
+                Width = 320,
+                Height = 140,
+                Text = titulo,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterParent,
+                MinimizeBox = false,
+                MaximizeBox = false
+            };
+            var txt = new TextBox { Left = 10, Top = 10, Width = 280, Text = valorInicial };
+            var ok = new Button { Text = "OK", Left = 140, Width = 70, Top = 40, DialogResult = DialogResult.OK };
+            var cancel = new Button { Text = "Cancelar", Left = 220, Width = 70, Top = 40, DialogResult = DialogResult.Cancel };
+            f.Controls.Add(txt); f.Controls.Add(ok); f.Controls.Add(cancel);
+            f.AcceptButton = ok; f.CancelButton = cancel;
+            return f.ShowDialog(this) == DialogResult.OK ? txt.Text : null;
+        }
+
+        private void RefrescarMarcas(int? seleccionarId = null)
+        {
+            var mNeg = new MarcaNegocio();
+            var marcas = mNeg.Listar();
+            var lista = new List<Marca> { new Marca { Id = 0, Descripcion = "(Todas)" } };
+            lista.AddRange(marcas);
+            cmbMarca.DataSource = null;
+            cmbMarca.DataSource = lista;
+            cmbMarca.DisplayMember = "Descripcion";
+            cmbMarca.ValueMember = "Id";
+            if (seleccionarId.HasValue) cmbMarca.SelectedValue = seleccionarId.Value;
+        }
+
+        private void RefrescarCategorias(int? seleccionarId = null)
+        {
+            var cNeg = new CategoriaNegocio();
+            var cats = cNeg.Listar();
+            var lista = new List<Categoria> { new Categoria { Id = 0, Descripcion = "(Todas)" } };
+            lista.AddRange(cats);
+            cmbCategoria.DataSource = null;
+            cmbCategoria.DataSource = lista;
+            cmbCategoria.DisplayMember = "Descripcion";
+            cmbCategoria.ValueMember = "Id";
+            if (seleccionarId.HasValue) cmbCategoria.SelectedValue = seleccionarId.Value;
+        }
+
+        private void AgregarMarca()
+        {
+            var desc = Prompt("Nueva Marca:");
+            if (string.IsNullOrWhiteSpace(desc)) return;
+
+            try
+            {
+                var neg = new MarcaNegocio();
+
+                if (neg.Listar().Any(x => string.Equals(x.Descripcion ?? "", desc.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("La marca ya existe.");
+                    return;
+                }
+                neg.Agregar(new Marca { Descripcion = desc.Trim() });
+
+                var recien = neg.Listar().FirstOrDefault(x => string.Equals(x.Descripcion ?? "", desc.Trim(), StringComparison.OrdinalIgnoreCase));
+                RefrescarMarcas(recien?.Id);
+                CargarListado(); 
+                AplicarFiltro();
+            }
+            catch (Exception ex) { MessageBox.Show("No se pudo agregar la marca.\n" + ex.Message); }
+        }
+
+        private void RenombrarMarca()
+        {
+            var m = cmbMarca.SelectedItem as Marca;
+            if (m == null || m.Id == 0) { MessageBox.Show("Seleccioná una marca (no '(Todas)')"); return; }
+            var nuevo = Prompt($"Renombrar '{m.Descripcion}':", m.Descripcion ?? "");
+            if (string.IsNullOrWhiteSpace(nuevo)) return;
+
+            try
+            {
+                var neg = new MarcaNegocio();
+                m.Descripcion = nuevo.Trim();
+                neg.Modificar(m);
+                RefrescarMarcas(m.Id);
+                CargarListado();
+                AplicarFiltro();
+            }
+            catch (Exception ex) { MessageBox.Show("No se pudo renombrar la marca.\n" + ex.Message); }
+        }
+
+        private void EliminarMarca()
+        {
+            var m = cmbMarca.SelectedItem as Marca;
+            if (m == null || m.Id == 0) { MessageBox.Show("Seleccioná una marca (no '(Todas)')"); return; }
+            if (MessageBox.Show($"¿Eliminar la marca '{m.Descripcion}'?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+
+            try
+            {
+                var neg = new MarcaNegocio();
+                neg.Eliminar(m.Id); // si hay artículos referenciando, tirará error por FK
+                RefrescarMarcas(0);
+                CargarListado();
+                AplicarFiltro();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar (probablemente está en uso por algún artículo).\n" + ex.Message);
+            }
+        }
+
+        private void AgregarCategoria()
+        {
+            var desc = Prompt("Nueva Categoría:");
+            if (string.IsNullOrWhiteSpace(desc)) return;
+
+            try
+            {
+                var neg = new CategoriaNegocio();
+                if (neg.Listar().Any(x => string.Equals(x.Descripcion ?? "", desc.Trim(), StringComparison.OrdinalIgnoreCase)))
+                { MessageBox.Show("La categoría ya existe."); return; }
+
+                neg.Agregar(new Categoria { Descripcion = desc.Trim() });
+
+                var recien = neg.Listar().FirstOrDefault(x => string.Equals(x.Descripcion ?? "", desc.Trim(), StringComparison.OrdinalIgnoreCase));
+                RefrescarCategorias(recien?.Id);
+                CargarListado();
+                AplicarFiltro();
+            }
+            catch (Exception ex) { MessageBox.Show("No se pudo agregar la categoría.\n" + ex.Message); }
+        }
+
+        private void RenombrarCategoria()
+        {
+            var c = cmbCategoria.SelectedItem as Categoria;
+            if (c == null || c.Id == 0) { MessageBox.Show("Seleccioná una categoría (no '(Todas)')"); return; }
+            var nuevo = Prompt($"Renombrar '{c.Descripcion}':", c.Descripcion ?? "");
+            if (string.IsNullOrWhiteSpace(nuevo)) return;
+
+            try
+            {
+                var neg = new CategoriaNegocio();
+                c.Descripcion = nuevo.Trim();
+                neg.Modificar(c);
+                RefrescarCategorias(c.Id);
+                CargarListado();
+                AplicarFiltro();
+            }
+            catch (Exception ex) { MessageBox.Show("No se pudo renombrar la categoría.\n" + ex.Message); }
+        }
+
+        private void EliminarCategoria()
+        {
+            var c = cmbCategoria.SelectedItem as Categoria;
+            if (c == null || c.Id == 0) { MessageBox.Show("Seleccioná una categoría (no '(Todas)')"); return; }
+            if (MessageBox.Show($"¿Eliminar la categoría '{c.Descripcion}'?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+
+            try
+            {
+                var neg = new CategoriaNegocio();
+                neg.Eliminar(c.Id);
+                RefrescarCategorias(0);
+                CargarListado();
+                AplicarFiltro();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar (probablemente está en uso por algún artículo).\n" + ex.Message);
+            }
+        }
     }
 }
