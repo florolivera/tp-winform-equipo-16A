@@ -149,12 +149,11 @@ namespace TPWinForm_Equipo16A
                 return;
 
             var imgNeg = new ImagenNegocio();
-            string nombreParaBD = imgNeg.GuardarImagenLocalRetornarNombre(archivo.FileName);
 
             if (string.IsNullOrWhiteSpace(txtImagenes.Text))
-                txtImagenes.Text = nombreParaBD;
+                txtImagenes.Text = archivo.FileName;
             else
-                txtImagenes.AppendText(Environment.NewLine + nombreParaBD);
+                txtImagenes.AppendText(Environment.NewLine + archivo.FileName);
         }
 
     }
