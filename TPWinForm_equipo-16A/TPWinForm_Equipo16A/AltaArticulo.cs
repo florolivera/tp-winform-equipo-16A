@@ -148,8 +148,6 @@ namespace TPWinForm_Equipo16A
             if (archivo.ShowDialog() != DialogResult.OK)
                 return;
 
-            var imgNeg = new ImagenNegocio();
-
             if (string.IsNullOrWhiteSpace(txtImagenes.Text))
                 txtImagenes.Text = archivo.FileName;
             else
